@@ -15,8 +15,14 @@ syn keyword ctPrimitives bool byte short int long float double string void
 syn keyword ctObjectTypes IIngredient IItemStack ILiquidStack IOreDictEntry
 syn region ctIIngredient matchgroup=Identifier start="<" end=">"
 
-syn keyword ctClasses brewing crafttweaker format furnace game loot mods recipes seeds vanilla
-syn keyword ctFunctions amount add addBrew addHidden addShaped addShapedMirrored addShapeless addAll all addRecipe remove removeAll removeByRegex removeByRecipeName removeShaped removeShapeless length mirror getFuel setFuel marked matches matchesExact print items withTag withDamage onlyWithTag onlyDamaged onlyDamageAtLeast onlyDamageAtMost onlyDamageBetween onlyStack or weight giveBack addChestLoot reuse removeChestLoot addSeed removeSeed displayName addTooltip addShiftTooltip clearTooltip setLocalisation transformReplace transformDamage noReturn transformConsume min max toLowerCase toUpperCase getBytes hashCode intern isEmpty toCharArray trim
+syn keyword ctGlobalFields brewing client events format furnace game itemUtils loadedMods logger oreDict loot mods recipes seeds server vanilla
+syn keyword ctGlobalFuncs print totalActions enableDebug isNull max min pow
+syn keyword ctGeneralMethods keys keySet values valueSet entrySet length toLowerCase toUpperCase getBytes hashCode intern isEmpty toCharArray remove trim
+syn keyword ctOreDictFuncs add addAll addItems empty firstItem removeItems
+syn keyword ctRecipeFuncs addHidden addShaped addShapedMirrored addShapeless all removeAll removeByRecipeName removeByRegex removeShaped removeShapeless
+syn keyword ctIngredientModifiers amount giveBack items marked matches matchesExact noReturn onlyDamageAtLeast OnlyDamageAtMost OnlyDamageBetween onlyDamaged onlyStack onlyWithTag or reuse  transformConsume transformDamage transformReplace weight withDamage withTag
+syn keyword ctFurnaceFuncs getFuel setFuel 
+syn keyword ctMiscFuncs addBrew addChestLoot removeChestLoot addSeed removeSeed displayName addTooltip addShiftTooltip clearTooltip setLocalisation
 
 " Numbers
 syn match ctNumber '\d\+'
@@ -71,8 +77,15 @@ hi def link ctPrimitives Type
 hi def link ctObjectTypes Type
 hi def link ctIIngredient Float
 
-hi def link ctClasses Keyword
-hi def link ctFunctions Function
+hi def link ctGlobalFields Keyword
+hi def link ctGlobalFuncs Keyword
+
+hi def link ctGeneralMethods Function
+hi def link ctOreDictFuncs Function
+hi def link ctRecipeFuncs Function
+hi def link ctIngredientModifiers Label
+hi def link ctFurnaceFuncs Function
+hi def link ctMiscFuncs Function
 
 let b:current_syntax = "crafttweaker"
 
