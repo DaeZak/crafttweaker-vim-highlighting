@@ -13,7 +13,10 @@ syn keyword ctNull null
 syn keyword ctBool true false
 syn keyword ctPrimitives bool byte short int long float double string void
 syn keyword ctObjectTypes IIngredient IItemStack ILiquidStack IOreDictEntry
-syn region ctIIngredient matchgroup=Identifier start="<" end=">"
+syn region ctBracketHandler matchgroup=Identifier start="<" end=">" contains=ctBracketIngredient,ctBracketMod,ctBracketIngredientMeta
+syn match ctBrackeyMod "\v[^:][a-z_]+" contained
+syn match ctBracketIngredient "\v:[a-zA-Z_]+"hs=s+1 contained
+syn match ctBracketIngredientMeta "\v:\d+"hs=s+1 contained
 
 syn keyword ctGlobalFields brewing client events format furnace game itemUtils loadedMods logger oreDict loot mods recipes seeds server vanilla
 syn keyword ctGlobalFuncs print totalActions enableDebug isNull max min pow
@@ -29,7 +32,8 @@ syn match ctNumber '\d\+'
 syn match ctNumber '[-+]\d\+'
 
 " Floats
-" syn match ctFloat '[-+]?[0-9]*\.?[0-9]+'
+syn match ctFloat '\d\+\.\d\+'
+syn match ctFloat '[-+]\d\+\.\d\+'
 
 " Strings
 syn region ctString start='"' skip='\\.' end='"'
@@ -59,6 +63,11 @@ syn match ctOperator "\v\*\="
 syn match ctOperator "\v/\="
 syn match ctOperator "\v\+\="
 syn match ctOperator "\v-\="
+syn match ctOperator "\v\ \>\ "
+syn match ctOperator "\v\ \<\ "
+syn match ctOperator "\v\&"
+syn match ctOperator "\v\|"
+syn match ctOperator "\v\^"
 
 hi def link ctTodo Todo
 hi def link ctComment Comment
@@ -70,12 +79,14 @@ hi def link ctOperator Operator
 
 hi def link ctNull Boolean
 hi def link ctBool Boolean
-" hi def link ctFloat Number
+hi def link ctFloat Number
 hi def link ctNumber Number
 hi def link ctString String
 hi def link ctPrimitives Type
 hi def link ctObjectTypes Type
-hi def link ctIIngredient Float
+hi def link ctBracketHandler Float
+hi def link ctBracketIngredient Label
+hi def link ctBracketIngredientMeta Number
 
 hi def link ctGlobalFields Keyword
 hi def link ctGlobalFuncs Keyword
@@ -83,7 +94,7 @@ hi def link ctGlobalFuncs Keyword
 hi def link ctGeneralMethods Function
 hi def link ctOreDictFuncs Function
 hi def link ctRecipeFuncs Function
-hi def link ctIngredientModifiers Label
+hi def link ctIngredientModifiers Operator
 hi def link ctFurnaceFuncs Function
 hi def link ctMiscFuncs Function
 
