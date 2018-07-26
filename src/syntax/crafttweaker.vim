@@ -12,7 +12,7 @@ syn keyword ctKeywords as include import function return version to global stati
 syn keyword ctNull null
 syn keyword ctBool true false
 syn keyword ctPrimitives bool byte short int long float double string void
-syn keyword ctObjectTypes IIngredient IItemStack ILiquidStack IOreDictEntry
+syn keyword ctObjectTypes IData IIngredient IItemStack ILiquidStack IOreDictEntry
 syn region ctBracketHandler matchgroup=Identifier start="<" end=">" contains=ctBracketIngredient,ctBracketMod,ctBracketIngredientMeta
 syn match ctBrackeyMod "\v[^:][a-z_]+" contained
 syn match ctBracketIngredient "\v:[a-zA-Z_]+"hs=s+1 contained
@@ -22,8 +22,8 @@ syn keyword ctGlobalFields brewing client events format furnace game itemUtils l
 syn keyword ctGlobalFuncs print totalActions enableDebug isNull max min pow
 syn keyword ctGeneralMethods keys keySet values valueSet entrySet length toLowerCase toUpperCase getBytes hashCode intern isEmpty toCharArray remove trim
 syn keyword ctOreDictFuncs add addAll addItems empty firstItem removeItems
-syn keyword ctRecipeFuncs addHidden addShaped addShapedMirrored addShapeless all removeAll removeByRecipeName removeByRegex removeShaped removeShapeless
-syn keyword ctIngredientModifiers amount giveBack items marked matches matchesExact noReturn onlyDamageAtLeast OnlyDamageAtMost OnlyDamageBetween onlyDamaged onlyStack onlyWithTag or reuse  transformConsume transformDamage transformReplace weight withDamage withTag
+syn keyword ctRecipeFuncs addHidden addShaped addShapedMirrored addShapeless all craft getRecipesFor removeAll removeByRecipeName removeByRegex removeShaped removeShapeless replaceAllOccurences
+syn keyword ctIngredientModifiers amount anyDamage giveBack items marked matches matchesExact noReturn onlyDamageAtLeast OnlyDamageAtMost OnlyDamageBetween onlyDamaged onlyStack onlyWithTag or reuse  transformConsume transformDamage transformReplace weight withDamage withTag
 syn keyword ctFurnaceFuncs getFuel setFuel 
 syn keyword ctMiscFuncs addBrew addChestLoot removeChestLoot addSeed removeSeed displayName addTooltip addShiftTooltip clearTooltip setLocalisation
 
