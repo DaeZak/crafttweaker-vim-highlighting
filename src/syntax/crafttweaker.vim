@@ -23,7 +23,7 @@ syn keyword ctGlobalFuncs print totalActions enableDebug isNull max min pow
 syn keyword ctGeneralMethods keys keySet values valueSet entrySet length toLowerCase toUpperCase getBytes hashCode intern isEmpty toCharArray remove trim
 syn keyword ctOreDictFuncs add addAll addItems empty firstItem removeItems
 syn keyword ctRecipeFuncs addHidden addShaped addShapedMirrored addShapeless all craft getRecipesFor removeAll removeByRecipeName removeByRegex removeShaped removeShapeless replaceAllOccurences
-syn keyword ctIngredientModifiers amount anyDamage giveBack items marked matches matchesExact noReturn onlyDamageAtLeast OnlyDamageAtMost OnlyDamageBetween onlyDamaged onlyStack onlyWithTag or reuse  transformConsume transformDamage transformReplace weight withDamage withTag
+syn keyword ctIngredientModifiers amount anyDamage damage giveBack items marked matches matchesExact noReturn onlyDamageAtLeast OnlyDamageAtMost OnlyDamageBetween onlyDamaged onlyStack onlyWithTag or reuse tag transformConsume transformDamage transformReplace updateTag weight withDamage withTag
 syn keyword ctFurnaceFuncs getFuel setFuel 
 syn keyword ctMiscFuncs addBrew addChestLoot removeChestLoot addSeed removeSeed displayName addTooltip addShiftTooltip clearTooltip setLocalisation
 
