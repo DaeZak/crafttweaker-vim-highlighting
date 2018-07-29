@@ -5,7 +5,7 @@ if exists("b:current_syntax")
 endif
 
 " Keywords
-syn keyword ctCondition if else in
+syn keyword ctCondition if else has in
 syn keyword ctRepeat for while to
 syn keyword ctKeywords as include import function return version to global static val var
 
@@ -18,7 +18,7 @@ syn match ctBrackeyMod "\v[^:][a-z_]+" contained
 syn match ctBracketIngredient "\v:[a-zA-Z_]+"hs=s+1 contained
 syn match ctBracketIngredientMeta "\v:\d+"hs=s+1 contained
 
-syn keyword ctGlobalFields brewing client events format furnace game itemUtils loadedMods logger oreDict loot mods recipes seeds server vanilla
+syn keyword ctGlobalFields brewing client events format furnace game itemUtils loadedMods logger oreDict loot mods recipes scripts seeds server vanilla
 syn keyword ctGlobalFuncs print totalActions enableDebug isNull max min pow
 syn keyword ctGeneralMethods keys keySet values valueSet entrySet length toLowerCase toUpperCase getBytes hashCode intern isEmpty toCharArray remove trim
 syn keyword ctOreDictFuncs add addAll addItems empty firstItem removeItems
