@@ -14,7 +14,7 @@ syn keyword ctBool true false
 syn keyword ctPrimitives bool byte short int long float double string void
 syn keyword ctObjectTypes IData IIngredient IItemStack ILiquidStack IOreDictEntry
 syn region ctBracketHandler matchgroup=Identifier start="<" end=">" contains=ctBracketIngredient,ctBracketMod,ctBracketIngredientMeta
-syn match ctBrackeyMod "\v[^:][a-z_]+" contained
+syn match ctBracketMod "\v[^:][a-z_]+" contained
 syn match ctBracketIngredient "\v:[a-zA-Z_]+"hs=s+1 contained
 syn match ctBracketIngredientMeta "\v:\d+"hs=s+1 contained
 
